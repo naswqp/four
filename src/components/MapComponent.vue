@@ -34,41 +34,53 @@ export default {
 </script>
 
 <style scoped>
+.map-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding-bottom: 75%; /* Соотношение сторон 4:3 */
+  height: 0;
+}
+
+.map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .action-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .btn-cost, .btn-video {
-  padding: 14px 32px;
-  border: none;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 12px 25px;
+  font-size: 16px;
 }
 
-.btn-cost {
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-  color: white;
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-cost, .btn-video {
+    width: 90%;
+    max-width: 300px;
+  }
 }
 
-.btn-video {
-  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-  color: white;
-}
-
-.btn-cost:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
-}
-
-.btn-video:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 75, 43, 0.4);
+@media (max-width: 480px) {
+  .btn-cost, .btn-video {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 </style>

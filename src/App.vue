@@ -71,6 +71,34 @@ export default {
 </script>
 
 <style>
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 10px;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Адаптивные шрифты */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
 .app-container {
   position: relative;
   min-height: 100vh;

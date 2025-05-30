@@ -44,6 +44,46 @@ export default {
 
 
 <style scoped>
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.8rem;
+    top: 25%;
+    width: 95%;
+  }
+  
+  .cities-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .city-item {
+    padding: 10px 15px;
+    margin: 5px;
+    flex: 0 0 calc(50% - 20px);
+    max-width: none;
+  }
+  
+  .hero-container {
+    height: 70vh;
+  }
+  
+  .cities-panel {
+    bottom: 5%;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 1.5rem;
+  }
+  
+  .city-item {
+    flex: 0 0 100%;
+    margin: 3px 0;
+  }
+}
+
 .hero-container {
   position: relative;
   height: 80vh;
