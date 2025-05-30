@@ -1,8 +1,9 @@
 <template>
   <div class="hero-container">
     <img src="/assets/hero-image.jpg" class="hero-image">
-    <h1 class="site-title">Автомобильный семейный научно познавательный маршрут "Путешествие по Демидовским местам рудного Алтая""
-    </h1>
+    <div class="title-wrapper">
+      <h1 class="site-title">Автомобильный семейный научно познавательный маршрут "Путешествие по Демидовским местам рудного Алтая"</h1>
+    </div>
     
     <div class="cities-panel">
       <div class="cities-list">
@@ -42,66 +43,30 @@ export default {
 }
 </script>
 
-
 <style scoped>
-@media (max-width: 768px) {
-  .site-title {
-    font-size: 1.8rem;
-    top: 25%;
-    width: 95%;
-  }
-  
-  .cities-list {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .city-item {
-    padding: 10px 15px;
-    margin: 5px;
-    flex: 0 0 calc(50% - 20px);
-    max-width: none;
-  }
-  
-  .hero-container {
-    height: 70vh;
-  }
-  
-  .cities-panel {
-    bottom: 5%;
-    padding: 10px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-title {
-    font-size: 1.5rem;
-  }
-  
-  .city-item {
-    flex: 0 0 100%;
-    margin: 3px 0;
-  }
-}
-
 .hero-container {
   position: relative;
   height: 80vh;
   overflow: hidden;
 }
 
-.site-title {
+.title-wrapper {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 15%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.site-title {
   color: white;
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-shadow: 0 4px 6px rgba(0,0,0,0.5);
   text-align: center;
-  width: 80%;
-  z-index: 2;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .hero-image {
@@ -114,78 +79,157 @@ export default {
 
 .cities-panel {
   position: absolute;
-  bottom: 8%;
+  bottom: 5%;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(15px);
-  padding: 20px 0;
+  padding: 15px 0;
   box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
+  z-index: 3;
 }
 
 .cities-list {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  flex-wrap: wrap;
+  gap: 8px;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .city-item {
   position: relative;
-  padding: 15px 30px;
+  padding: 12px 20px;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  flex: 1;
+  flex: 1 0 auto;
+  min-width: 120px;
+  max-width: 200px;
   text-align: center;
-  max-width: 250px;
 }
 
 .city-name {
   position: relative;
   z-index: 2;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.city-hover-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(74, 107, 255, 0.3);
-  transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
+/* Анимации остаются без изменений */
 
-.city-item:hover .city-hover-effect {
-  transform: translateY(0);
-}
-
-@keyframes slideUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+  .site-title {
+    font-size: 2rem;
   }
 }
 
-.city-item:nth-child(1) { animation: fadeInUp 0.5s 0.1s ease-out forwards; }
-.city-item:nth-child(2) { animation: fadeInUp 0.5s 0.2s ease-out forwards; }
-.city-item:nth-child(3) { animation: fadeInUp 0.5s 0.3s ease-out forwards; }
-.city-item:nth-child(4) { animation: fadeInUp 0.5s 0.4s ease-out forwards; }
-.city-item:nth-child(5) { animation: fadeInUp 0.5s 0.5s ease-out forwards; }
-.city-item:nth-child(6) { animation: fadeInUp 0.5s 0.6s ease-out forwards; }
+@media (max-width: 992px) {
+  .site-title {
+    font-size: 1.7rem;
+  }
+  
+  .city-name {
+    font-size: 13px;
+  }
+}
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+  .title-wrapper {
+    top: 10%;
+  }
+  
+  .site-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .cities-panel {
+    bottom: 3%;
+    padding: 10px 0;
+  }
+  
+  .cities-list {
+    gap: 6px;
+  }
+  
+  .city-item {
+    padding: 10px 12px;
+    min-width: 100px;
+    max-width: 150px;
+  }
+  
+  .city-name {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-container {
+    height: 85vh;
+  }
+  
+  .title-wrapper {
+    top: 5%;
+  }
+  
+  .site-title {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+  
+  .cities-panel {
+    bottom: 2%;
+  }
+  
+  .cities-list {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .city-item {
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+    padding: 8px 5px;
+    margin: 2px;
+  }
+  
+  .city-name {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-line-clamp: 2;
+  -moz-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+}
+
+@media (max-width: 400px) {
+  .site-title {
+    font-size: 1.1rem;
+  }
+  
+  .city-name {
+    font-size: 10px;
   }
 }
 </style>

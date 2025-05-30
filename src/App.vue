@@ -73,7 +73,17 @@ export default {
 <style>
 @media (max-width: 768px) {
   .main-content {
-    padding: 0 10px;
+    padding: 0;
+  }
+  
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
   }
   
   .container {
