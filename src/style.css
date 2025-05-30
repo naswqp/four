@@ -1,0 +1,19 @@
+/* Кастомные стили */
+.modal {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.city-buttons .btn {
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.city-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#map {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
