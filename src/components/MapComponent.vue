@@ -27,7 +27,7 @@
 export default {
   methods: {
     openVideo() {
-      window.open('https://disk.yandex.ru/i/G5UXdyjnenrCdA', '_blank');
+      window.open('https://disk.yandex.ru/i/7pUh96hcgnd1Yg', '_blank');
     }
   }
 }
