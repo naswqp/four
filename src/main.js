@@ -1,9 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import { createHead } from '@unhead/vue'
-const head = createHead()
-app.use(head)
 
 let appInstance = null
 let isMounting = false

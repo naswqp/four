@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "@unhead/vue": "^2.0.10",
+    "@vueuse/head": "^2.0.0",
     "bootstrap": "^5.3.6",
     "sass": "^1.89.0",
     "vue": "^3.5.13"
